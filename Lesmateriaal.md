@@ -133,7 +133,7 @@ We kunnen later de functie op deze manier aanroepen.
 let x = sum(10, 5); // number, 15
 ```
 
-De functie genaamd `sum` neemt twee parameters aan, `firstNumber` met het type `number` en `secondNumber` met het type `number`, en geeft een `number` terug. In de inhoud (ookwel *body*) van de functie worden `first` en `second` bij elkaar opgeteld en teruggeven (met `return`) aan hetgene wat de functie aanroept.
+De functie genaamd `sum` neemt twee parameters aan, `first` met het type `number` en `second` met het type `number`, en geeft een `number` terug. In de inhoud (ookwel *body*) van de functie worden `first` en `second` bij elkaar opgeteld en teruggeven (met `return`) aan hetgene wat de functie aanroept.
 
 1. `function` - **Keyword**
    Dit vertelt TypeScript dat we een **nieuwe** functie declareren.
