@@ -6,7 +6,7 @@
 
 [TypeScript][TypeScript] (ook wel *TS*) is een scripttaal (programmeertaal) die op de taal [JavaScript][JavaScript] (ook wel *JS*) is gebouwd. Het wordt gebruikt om allerlei soorten programma's te maken zoals web-, mobile-, desktop- en serverapplicaties.
 
-TypeScript is *backwards-compatible* met JavaScript, wat betekent dat alles wat je in JavaScript schrijft je ook in TypeScript kan gebruiken. Daarentegen wordt TS steeds vaker gebruikt aangezien deze taal features bevat die het schrijven van schonere code en grotere applicaties gemakkelijker en veiliger maakt.
+TypeScript is *backwards-compatible* met JavaScript, wat betekent dat alles wat je in JavaScript schrijft je ook in TypeScript kan gebruiken. Daarentegen wordt TS steeds veel gebruikt aangezien deze taal features bevat die het schrijven van schonere code en grotere applicaties overzichtelijker maakt.
 
 TypeScript bestanden eindigen op `.ts` (of `.tsx` voor React applicaties) en worden, zodra je programma gedraaid wordt, gecompileerd naar `.js` bestanden die door een webbrowser gedraaid kunnen worden.
 
