@@ -1,7 +1,7 @@
 import { swapi } from './backend/swapi';
 
-function main() {
-
+async function main() {
+  // Typ hier je code.
 }
 
 main();

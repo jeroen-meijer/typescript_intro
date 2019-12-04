@@ -8,7 +8,7 @@
 
 TypeScript is *backwards-compatible* met JavaScript, wat betekent dat alles wat je in JavaScript schrijft je ook in TypeScript kan gebruiken. Daarentegen wordt TS steeds veel gebruikt aangezien deze taal features bevat die het schrijven van schonere code en grotere applicaties overzichtelijker maakt.
 
-TypeScript bestanden eindigen op `.ts` (of `.tsx` voor React applicaties) en worden, zodra je programma gedraaid wordt, gecompileerd naar `.js` bestanden die door een webbrowser gedraaid kunnen worden.
+TypeScript bestanden eindigen op `.ts` en worden, zodra je programma gedraaid wordt, gecompileerd naar `.js` bestanden die door een webbrowser gedraaid kunnen worden.
 
 #### Handige weetjes
 
@@ -301,9 +301,62 @@ Om dit te voorkomen kunnen we gebruik maken van *asynchrone functies*. Dit zijn 
 
 ### Gebruik
 
-...
+In deze workshop gebruiken we de [Star Wars API][Star Wars API]. We kunnen met de `swapi` variabele via het internet informatie over acteurs en films van Star Wars opvragen. Aangezien deze informatie niet direct beschikbaar is, zijn alle functies async.
 
-### Voorbeelden
+Beide functies van de `swapi`, `getPerson(id)` en `getFilm(id)`, geven ons de waarde `Promise` terug. We kunnen hiermee de functie `.then` aanroepen en het een functie geven die uitgevoerd moet worden wanneer de informatie is opgehaald. Dit heet een *callback* functie.
+
+We kunnen bijvoorbeeld informatie over de acteur met het id `1` opvragen. Dat doen we als volgt:
+
+```ts
+import { swapi } from './backend/swapi';
+
+swapi.getPerson(1);
+```
+
+Dit geeft ons een `Promise<Person>`. Dat betekent dat we niet gelijk een waarde van `Person` hebben, maar ons wordt **beloofd** dat we later een `Person` krijgen.
+
+We kunnen een `Promise` een callback functie geven met `.then(callback)`. Dit is een functie die zelf een functie inneemt als parameter en deze uitvoert zodra de informatie van de `Promise` is opgehaald.
+
+Laten we TypeScript vertellen wat er moet gebeuren als de informatie is opgehaald. Laten we alle informatie over de persoon op het scherm tonen.
+
+```ts
+function printPerson(person: Person): void {
+    console.log(person);
+}
+
+swapi.getPerson(1).then(printPerson);
+```
+
+De onderste regel kunnen we in het Engels lezen als "**Get** this person and **then** **print** the information."
+
+We kunnen ook in plaats van van te voren een functie te definiëren ook rechtstreeks binnen de `.then(...)` een functie meegeven. Het volgende stukje code doet precies hetzelfde als hetgene hiervoor.
+
+```ts
+swapi.getPerson(1).then((person) => console.log(person));
+```
+
+De functie `(person) => console.log(person)` is een functie net zoals de `printPerson` van net, maar hij wordt ter plekke aangemaakt, in plaats van dat we hem van tevoren definiëren als `printPerson`. Het enige verschil is het pijltje (`=>`) dat we nodig hebben.
+
+We kunnen ook een langere functie meegeven door na het pijltje de haakjes toe te voegen net zoals bij normale functies.
+
+```ts
+swapi.getPerson(1).then((person) => {
+    console.log(person);
+    // Hier kunnen meer regels staan!
+});
+```
+
+Aangezien we binnen de callback functie volledige toegang hebben tot het `person` object, kunnen we alles erover opzoeken. Laten we alleen de naam van de acteur op het scherm tonen.
+
+```ts
+swapi.getPerson(1).then((person) => console.log(person.name));
+
+// of
+
+swapi.getPerson(1).then((person) => {
+    console.log(person.name);
+});
+```
 
 
 
@@ -311,3 +364,4 @@ Om dit te voorkomen kunnen we gebruik maken van *asynchrone functies*. Dit zijn 
 [JavaScript]: <https://nl.wikipedia.org/wiki/JavaScript>
 [Node.JS]: <https://nodejs.org/>
 [Node.JS download]: <https://nodejs.org/en/download/>
+[Star Wars API]: <https://swapi.co/>
