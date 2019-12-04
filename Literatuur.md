@@ -40,6 +40,8 @@ Variabelen bestaan uit twee onderdelen: het type en de waarde. Een variabele `na
 
 Elke variabele heeft een type. Dit geeft aan welke waarden er aan de variabele toegewezen kunnen worden. Als je een variabele declareert met het type `number`, kan je waarden met dat type eraan toewijzen (in dit geval, alleen getallen; `1`, `235.92`, etc.).
 
+De meeste types hebben zelf ook waarden en functies.
+
 ### Gebruik
 
 In TypeScript (en JavaScript) kan je variabelen op meerdere manieren aanmaken; `var`, `let` en `const`. In deze workshop gebruiken we `let`.
@@ -86,6 +88,8 @@ let lastName = 'van Dam'; // string, 'van Dam'
 
 let fullName = firstName + ' ' + lastName; // string, 'Johan van Dam'
 
+let nameLength = fullName.length; // number, 13
+
 let age = 36; // number, 36
 let tenYearsOlder = age + 10; // number, 46
 
@@ -107,11 +111,13 @@ variableWithAnyType = 'Hello'; // any, Hello
 variableWithAnyType = true; // any, true
 ```
 
+
+
 ## 2. Functies
 
 ### Definitie
 
-Functies zijn stukjes code/processen. Op dezelfde manier dat je een waarde kan opslaan met variabelen, kan je met functies een blok code definieren en later aanroepen.
+Functies zijn stukjes code/processen. Op dezelfde manier dat je een waarde kan opslaan met variabelen, kan je met functies een blok code definieren en later aanroepen. Er gaat iets in, er komt iets uit.
 
 Functies kunnen parameters (*arguments*) aannemen om berekeningen uit te voeren. Ook kunnen functies een waarde teruggeven, bijvoorbeeld om het resultaat van een som aan een variabele toe te wijzen.
 
@@ -166,6 +172,9 @@ function greet(name: string): void {
 greet('Andreas'); // Toont 'Hallo Andreas!' op het scherm.
 greet('Simon'); // Toont 'Hallo Simon!' op het scherm.
 greet(); // FOUT. De parameter name is niet meegegeven.
+
+let name = 'Cassandra'; // string, 'Cassandra'
+let upperCaseName = name.toUpperCase(); // string, 'CASSANDRA'
 ```
 
 
@@ -274,6 +283,27 @@ if (frontDoorbellIsPressed || backDoorbellIsPressed) {
 ```
 
 
+
+## 4. Async
+
+### Definitie
+
+Stel je voor, je hebt een robot. Een hele domme robot. Deze robot kan je een velletje papier met instructies geven die achter elkaar worden uitgevoerd. We moeten hem heel specifiek vertellen wat hij moet doen.
+
+In dit scenario staat de robot voor Node.JS en de papieren instructies voor onze TypeScript code. Node.JS voert onze code regel voor regel uit maar kan wel duizenden van dit soort operaties per seconden uitvoeren. Daar staat wel tegenover dat Node.JS, net zoals onze robot, maar één ding tegelijk kan doen.
+
+Stel we geven de robot instructies om koffie te zetten en daarna om dozen te stapelen. De robot zal eerst naar het koffiezetapparaat lopen en het aanzetten, een kopje eronder zetten en dan op de knop drukken. Dan wordt de koffie gemaakt, maar dit duurt lang. De robot wacht wel een volle minuut tot de koffie klaar is, brengt het naar ons toe en pas daarna gaat hij dozen stapelen.
+In dit geval heeft de robot veel tijd verspild aan het wachten op de koffie. Zou het niet veel efficienter zijn om, tijdens dat de koffie gezet wordt, alvast dozen te gaan stapelen. Zodra het apparaat eenmaal klaar is, kan de robot een seintje krijgen en de koffie brengen. Daarna kan hij weer door met stapelen.
+
+Zo'n zelfde soort situatie is wat vaak voor kan komen in apps. Af en toe moeten er lange berekeningen gedaan worden of wordt er data opgehaald van het internet. Dit kan allemaal relatief lang duren. Als hier niets aan gedaan zou zijn, kan het voorkomen dat je app spontaan vastloopt elke keer als je een stukje data op moet halen. Je programma is aan het wachten tot die data terug komt, en kan in de tussentijd niet het scherm verversen.
+
+Om dit te voorkomen kunnen we gebruik maken van *asynchrone functies*. Dit zijn functies die erg lijken op normale functies, maar waarvan het resultaat niet direct bekend is (bijvoorbeeld bij het sturen van een berichtje of het verwerken van grote berekeningen). Deze *async* functies zorgen ervoor dat we een process kunnen laten draaien "in de achtergrond" en niet hoeven te wachten op het resultaat. We kunnen vervolgens TypeScript vertellen wat er moet gebeuren zodra het resultaat eenmaal is aangekomen.
+
+### Gebruik
+
+...
+
+### Voorbeelden
 
 
 

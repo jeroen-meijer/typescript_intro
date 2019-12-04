@@ -1,0 +1,1 @@
+export const toString = <T extends Object>(item: T) => item.toString();

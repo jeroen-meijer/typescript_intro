@@ -1,5 +1,7 @@
+import { swapi } from './backend/swapi';
+
 function main() {
-  console.log('Hi');
+
 }
 
 main();
