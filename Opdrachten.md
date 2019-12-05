@@ -1,6 +1,13 @@
 # Opdrachten
 
-### Deel 1: Veriabelen, functies en ifs
+### Deel 0: Variabelen
+
+1. Maak een variabele `age` met type `number` en geef het als waarde je leeftijd in jaren.
+2. Maak een variabele `name` met type `string` en geef het als waarde je voornaam.
+3. Maak een variabele `isAdult` met type `boolean`en geef het als waarde of je `age` hoger is dan `18`. (*Tip: gebruik `==`.*)
+4. Maak een variabele `buttonIsPressed` en geef het als waarde `true`. Wat is het type van deze variabele?
+
+### Deel 1: Functies en ifs
 
 1. Maak een functie `greet(name: string): void` die de gebruiker begroet met hun naam.
 2. Maak een functie `isEven(num: number): boolean` die berekent of het gegeven getal even of oneven is. *Tip: gebruik `a % b` om te zien of `a` deelbaar is door `b`.*

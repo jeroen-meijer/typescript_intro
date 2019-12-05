@@ -1,4 +1,4 @@
-# Lesmateriaal
+# Literatuur
 
 ## 0. Benodigdheden
 
