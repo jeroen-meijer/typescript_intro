@@ -4,7 +4,7 @@
 
 1. Maak een variabele `age` met type `number` en geef het als waarde je leeftijd in jaren.
 2. Maak een variabele `name` met type `string` en geef het als waarde je voornaam.
-3. Maak een variabele `isAdult` met type `boolean`en geef het als waarde of je `age` hoger is dan `18`. (*Tip: gebruik `==`.*)
+3. Maak een variabele `isAdult` met type `boolean`en geef het als waarde of je `age` hoger is dan `18`. (*Tip: gebruik `===`.*)
 4. Maak een variabele `buttonIsPressed` en geef het als waarde `true`. Wat is het type van deze variabele?
 
 ### Deel 1: Functies en ifs
@@ -16,16 +16,7 @@
    1. Wat geeft deze functie terug? Vervang `???` met het juiste type.
    2. Kan je de body van de functie 1 regel lang maken?
 
-### Deel 2: Classes
-
-1. Voeg een functie toe aan de `Car ` class `canDrive(): boolean` die aangeeft of de gegeven auto de weg op mag. In dit geval mag een auto rijden als hij vier wielen en minimaal 1 stoel heeft.
-   *Tip: gebruik `this.wheels` en `this.seats`.*
-2. Voeg een functie toe aan de `Car ` class `addSeat(): void` die een stoel toevoegd aan de auto.
-3. Voeg een `boolean` toe aan de auto genaamd `isDriving` die aangeeft of de auto nu aan het rijden is.
-4. Voeg een functie to aan de `Car` class `startDriving(): void` die de auto laat rijden.
-5. Voeg een functie to aan de `Car` class `stopDriving(): void` die de auto stopt.
-
-### Deel 3: Async
+### Deel 2: Async
 
 1. Gebruik de `swapi` API om film **1** op te zoeken en toon **daarna** het resultaat op het scherm.
 2. Gebruik de `swapi` API om acteur **1** op te zoeken en toon **daarna** alleen de naam op het scherm.
